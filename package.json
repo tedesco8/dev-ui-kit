@@ -1,0 +1,61 @@
+{
+  "name": "dev-ui-kit",
+  "version": "0.1.0",
+  "description": "A fast UI Kit for developers.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "jest --config ./config/jest.config.js",
+    "release": "npm run build && npm publish",
+    "release:patch": "npm version patch && npm run release",
+    "release:minor": "npm version minor && npm run publish",
+    "release:major": "npm version major && npm run publish",
+    "build": "NODE_ENV=production && rm -rf ./dist && mkdir dist && npx babel --config-file ./babel.config.js src/ --out-dir dist --copy-files --ignore '**/*.spec.js' --no-copy-ignored"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tedesco8/dev-ui-kit.git"
+  },
+  "keywords": [
+    "library, librería, UI, developers, desarrolladores, components, componentes, kit, set"
+  ],
+  "author": "Pablo Tedesco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tedesco8/dev-ui-kit/issues"
+  },
+  "homepage": "https://github.com/tedesco8/dev-ui-kit#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.7.0",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.7",
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@testing-library/dom": "^8.11.3",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "babel-loader": "^8.2.3",
+    "babel-preset-minify": "^0.5.1",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "jest": "^27.5.1",
+    "prettier": "^2.5.1",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
